@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+			var array =['湖南省','湖北省'];
+			var  array1 = [];
+			array1['湖南省']=['长沙','株洲','湘潭','娄底'];
+			array1['湖北省']=['武汉','黄冈','黄石','宜昌'];
+
+			function initProvince(){
+				var province = document.getElementById("province");
+				for (let i = 0; i < array.length; i++) {
+					const element = array[i];
+					var op = document.createElement("option");
+					op.nodeName = element;
+					op.text = element;
+					op.value = element;
+					province.appendChild(op);
+				}
+				fillCity(array[0])
+			}
+
+			function fillCity(params) {
+				var p = document.getElementById("city");
+				p.length=0;
+				const arr = array1[params];
+				for (let index = 0; index < arr.length; index++) {
+					const element = arr[index];
+					var op = document.createElement("option");
+					op.nodeName = element;
+					op.text = element;
+					op.value = element;
+					p.appendChild(op);
+				}
+			}
+
+			 window.onload =  initProvince;
+		</script>
+	</head>
+	<body>
+		省份:<select id="province" onchange="fillCity(this.value)"></select>
+		城市:<select id="city"></select>
+	</body>
+</html>

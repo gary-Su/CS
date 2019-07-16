@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script  type="text/javascript">
+         function xx(){
+            alert("onblur方式执行")
+            }
+      
+        var price= 210;
+            if(true){
+                var s;
+                if(price>200){
+                    s=1;
+                }else{
+                    s=2
+                }
+                
+                switch(s){
+                    case 1: document.write("会员消费"+price+"实际支付"+price*0.75); break;
+                    case 2: document.write("会员消费"+price+"实际支付"+price*0.9); break;
+                    default : document.write("会员消费"+price+"实际支付"+price); 
+                }
+            }else{
+                if(price>100){
+                    document.write("会员消费"+price+"实际支付"+price*0.9); 
+                }else{
+                    document.write("会员消费"+price+"实际支付"+price); 
+                }
+                
+            }
+            document.writeln("<br/>");
+
+            var i,j;
+            for(i=1;i<10;i++){
+                for(j=1;j<=i;j++){
+                    document.writeln(i+"*"+j+"="+i*j+"&emsp;");
+                }
+                document.writeln("<br/>");
+            }
+            function check(values){
+               
+                if(values.email == '123@qq.com' &&values.password=='123')
+                {
+                    alert(1)
+                    return true;
+                }
+                else{
+                    alert(2)
+                    return false;
+                }
+               
+            }
+           // prompt("1111");
+            //var flag = confirm("111");
+            //alert(flag);
+           // window.alert(222);
+           // alert(Window.arguments)
+            
+            
+        </script>
+    </head>
+    <body>
+        <form action="a.html" onsubmit="return check(this)" >
+            邮箱:<input type="email" id="email"/>
+            密码:<input type="password" id="password"/>
+            <input type="submit"/>
+        </form>
+    </body>
+</html>
